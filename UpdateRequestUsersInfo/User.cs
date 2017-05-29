@@ -18,7 +18,8 @@
 
         protected bool Equals(User other)
         {
-            return string.Equals(Login, other.Login) && string.Equals(Snp, other.Snp) && string.Equals(Post, other.Post) &&
+            return string.Equals(Login, other.Login) && 
+                   string.Equals(Snp, other.Snp) && string.Equals(Post, other.Post) &&
                    string.Equals(Phone, other.Phone) && string.Equals(Department, other.Department) &&
                    string.Equals(Unit, other.Unit) && string.Equals(Office, other.Office);
         }
