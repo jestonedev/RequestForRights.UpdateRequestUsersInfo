@@ -83,7 +83,8 @@ namespace UpdateUsersLogins
                 const string updateQuery = @"UPDATE dbo.RequestUsers 
                         SET
                           Login = @Login, Snp = @Snp, Post = @Post,
-                          Phone = @Phone, 
+                          Phone = @Phone,
+                          Unit = @Unit, 
                           Office = @Office
                         WHERE
                           IdRequestUser = @IdUser AND Deleted <> 1";
@@ -98,6 +99,8 @@ namespace UpdateUsersLogins
                         Value = (object)userInfo.Post ?? DBNull.Value},
                     new SqlParameter {ParameterName = "@Phone", 
                         Value = (object)userInfo.Phone ?? DBNull.Value},
+                    new SqlParameter {ParameterName = "@Unit", 
+                        Value = (object)userInfo.Unit ?? DBNull.Value},
                     new SqlParameter {ParameterName = "@Office", 
                         Value = (object)userInfo.Office ?? DBNull.Value},
                     new SqlParameter {ParameterName = "@IdUser", 

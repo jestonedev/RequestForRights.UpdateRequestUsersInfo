@@ -21,7 +21,7 @@ namespace UpdateUsersLogins
                 logger.Log(string.Format("IdRequestUser: {0}", user.IdUser), LogLevel.Notice);
                 var ldapUser = ldapRepository.FindUser(user.Login, user.Snp, user.Department, user.Unit);
                 if (ldapUser == null || user == ldapUser) continue;
-                if (user.Department != ldapUser.Department || user.Unit != ldapUser.Unit) continue;
+                if (user.Department != ldapUser.Department) continue;
                 var result = databaseRepository.UpdateUser(user.IdUser, ldapUser);
                 if (!result)
                 {
